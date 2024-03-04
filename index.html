@@ -17,6 +17,11 @@
 		/>
 
 		<link rel="stylesheet" href="style.css" />
+		<script src="script.js"></script>
+		<script
+			type="module"
+			src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+		></script>
 
 		<title>Limpio</title>
 	</head>
@@ -222,36 +227,5 @@
 				</div>
 			</footer>
 		</main>
-
-		<script>
-			let year = document.querySelector(".year");
-			const currentYear = new Date().getFullYear();
-			year.textContent = currentYear;
-
-			const allLinks = document.querySelectorAll("a:link");
-			allLinks.forEach(function (link) {
-				link.addEventListener("click", function (e) {
-					e.preventDefault();
-					const href = link.getAttribute("href");
-
-					// Scroll back to top
-					if (href === "#")
-						window.scrollTo({
-							top: 0,
-							behavior: "smooth",
-						});
-
-					// Scroll to other links
-					if (href !== "#" && href.startsWith("#")) {
-						const sectionEl = document.querySelector(href);
-						sectionEl.scrollIntoView({ behavior: "smooth" });
-					}
-
-					// Close mobile navigation
-					if (link.classList.contains("main-nav-link"))
-						headerEl.classList.toggle("nav-open");
-				});
-			});
-		</script>
 	</body>
 </html>
