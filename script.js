@@ -1,14 +1,14 @@
 "use strict";
 
-let year = document.querySelector(".year");
+const year = document.querySelector(".year");
 const currentYear = new Date().getFullYear();
 year.textContent = currentYear;
 
 const btnNavEl = document.querySelector(".btn-mobile-nav");
-const navigationEl = document.querySelector(".navigation");
+const headerEl = document.querySelector(".header");
 
 btnNavEl.addEventListener("click", function () {
-	navigationEl.classList.toggle("nav-open");
+	headerEl.classList.toggle("nav-open");
 });
 
 const allLinks = document.querySelectorAll("a:link");
